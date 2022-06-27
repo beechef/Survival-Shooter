@@ -31,8 +31,8 @@ namespace Runtime.Player
             _yRotation += mouseValue.x * sensitivity * Time.deltaTime;
             player.localRotation = Quaternion.Euler(0f, _yRotation, 0f);
             camera.localRotation = Quaternion.Euler(_xRotation, 0f, 0f);
-            gun.LookAt(camera.forward * 50);
-            // gun.localRotation = Quaternion.Euler(_xRotation, 0f, 0f);
+            // gun.LookAt(camera.forward * 50);
+            gun.localRotation = Quaternion.Euler(_xRotation, 0f, 0f);
         }
     }
 }

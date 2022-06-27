@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 3
   sprintSpeed: 4
-  jumpHeight: 2
-  fireSpeed: 1
+  jumpHeight: 1
+  fireSpeed: 0.75
+  fireRange: 125
