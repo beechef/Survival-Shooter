@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_Data:
+    m_SerializedData: []
+  m_GUID: a432c5de1a2237248a7aadd57e271dac
+  m_SerializeEntries:
+  - m_GUID: b50a16498d742c749a491c73129c02e0
+    m_Address: Assets/Prefabs/Enemy/Zombunny.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 552452c27c96ce040aa7084cfce98faf
+    m_Address: Assets/Prefabs/Enemy/Zombear.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 414763cdebeab9040aaeefbc9bbeb648
+    m_Address: Assets/Prefabs/Enemy/Hellephant.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 6b2b905ed1ff5374ebe225d8b39c37e1, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: ac11cf589a5e6574192d785d095ccccf, type: 2}
+    - {fileID: 11400000, guid: d3b298b601052c94faf1471d9c9ec5c5, type: 2}

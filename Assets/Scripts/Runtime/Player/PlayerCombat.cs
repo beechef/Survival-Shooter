@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Runtime.Player
 {
-    public class PlayerCombat : CombatSystem
+    public class PlayerCombat : MonoBehaviour
     {
         [SerializeField] private PlayerComponents playerComponents;
         [SerializeField] private LineRenderer lineRenderer;
@@ -21,9 +21,8 @@ namespace Runtime.Player
         private WaitForSeconds _lineFadedTime;
 
 
-        protected override void Start()
+        protected void Start()
         {
-            base.Start();
             audioSource.loop = false;
             _camera = Camera.main;
             _playerStatsSystem = playerComponents.playerStatsSystem;
@@ -33,17 +32,17 @@ namespace Runtime.Player
         }
 
 
-        public override void Fire()
+        public void Fire()
         {
             if (Time.time - _lastFire <= _stats.fireSpeed) return;
             Vector3 point;
-            base.Fire();
             audioSource.Stop();
             audioSource.clip = fireAudio;
             audioSource.Play();
             lineRenderer.SetPosition(0, attackPoint.position);
-            
-            if (Physics.Raycast(_camera.transform.position, _camera.transform.forward, out _raycastHit, _stats.fireRange))
+
+            if (Physics.Raycast(_camera.transform.position, _camera.transform.forward, out _raycastHit,
+                _stats.fireRange))
             {
                 point = _raycastHit.point;
             }

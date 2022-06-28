@@ -27,7 +27,7 @@ namespace Runtime.Player
         {
             Vector2 mouseValue = _playerInput.GetMouseValue();
             _xRotation -= mouseValue.y * sensitivity * Time.deltaTime;
-            _xRotation = Mathf.Clamp(_xRotation, -30, 30);
+            _xRotation = Mathf.Clamp(_xRotation, -90, 90);
             _yRotation += mouseValue.x * sensitivity * Time.deltaTime;
             player.localRotation = Quaternion.Euler(0f, _yRotation, 0f);
             camera.localRotation = Quaternion.Euler(_xRotation, 0f, 0f);

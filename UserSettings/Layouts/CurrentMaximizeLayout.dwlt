@@ -88,7 +88,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 0
+    m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -407,9 +407,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 5.724584, y: 2.9456375, z: 0.29118645}
+    m_Target: {x: -15.787144, y: -0.015594631, z: 1.6934065}
     speed: 2
-    m_Value: {x: 5.724584, y: 2.9456375, z: 0.29118645}
+    m_Value: {x: -15.787144, y: -0.015594631, z: 1.6934065}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -456,13 +456,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.008530045, y: -0.97798604, z: 0.20447639, w: -0.040799987}
+    m_Target: {x: 0.061598673, y: -0.18367416, z: 0.011533064, w: 0.9809894}
     speed: 2
-    m_Value: {x: -0.008530025, y: -0.97798383, z: 0.20447592, w: -0.040799893}
+    m_Value: {x: 0.061598554, y: -0.1836738, z: 0.0115330415, w: 0.98098755}
   m_Size:
-    m_Target: 0.9831076
+    m_Target: 3.1572335
     speed: 2
-    m_Value: 0.9831076
+    m_Value: 3.1572335
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -542,7 +542,7 @@ MonoBehaviour:
   - {fileID: 8}
   - {fileID: 9}
   m_Selected: 0
-  m_LastSelected: 2
+  m_LastSelected: 1
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -637,7 +637,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -41100
+  m_LastSelectedObjectID: -41104
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -695,9 +695,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 745fffff
-      m_LastClickedID: -41100
-      m_ExpandedIDs: 705fffff805fffff1262ffff9e65fffff066fffff466fffffa66ffff0067ffffe468ffff7270ffff8c71ffff4e74ffff4878ffffd47fffff60baffffb8faffff22fbffff2afbffff2cfbffff2efbffff845c0000925c0000
+      m_SelectedIDs: 2efbffff
+      m_LastClickedID: -1234
+      m_ExpandedIDs: 705fffff805fffff1262ffff9e65fffff066fffff466fffffa66ffff0067ffffe468ffff7270ffff8c71ffff4e74ffff4878ffffd47fffff60baffffb8faffffd6faffff16fbffff22fbffff2afbffff2cfbffff2efbffff845c0000925c0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -855,22 +855,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Models/Characters
+    - Assets/Stats
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Models/Characters
+  - Assets/Stats
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Admins\Desktop\Unity\Training\Survival Shooter
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 8a680000
-    m_LastClickedID: 26762
-    m_ExpandedIDs: 00000000325f0000585f00005e5f0000
+    m_SelectedIDs: 605f0000
+    m_LastClickedID: 24416
+    m_ExpandedIDs: 00000000325f0000585f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -923,9 +923,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 745fffff
-    m_LastClickedInstanceID: -41100
-    m_HadKeyboardFocusLastEvent: 1
+    m_SelectedInstanceIDs: 2efbffff
+    m_LastClickedInstanceID: -1234
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: 4a60000008600000845f00009c680000
     m_RenameOverlay:
       m_UserAcceptedRename: 0

@@ -2,7 +2,7 @@
 
 namespace Runtime.Player
 {
-    [CreateAssetMenu(fileName = "New Stats", menuName = "Stats/Player Stats")]
+    [CreateAssetMenu(fileName = "New Player Stats", menuName = "Stats/Player Stats")]
     public class PlayerStats : ScriptableObject
     {
         public float moveSpeed;
