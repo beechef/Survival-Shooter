@@ -1,5 +1,28 @@
 {
   "dependencies": {
+    "com.cysharp.unitask": {
+      "version": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "78db78c7bd5c1c75902dabb1496c85bd2316fca5"
+    },
+    "com.grashaar.unity-objectpooling": {
+      "version": "https://github.com/felixngd/Unity.ObjectPooling.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.laicasaane.unity-supplements": "2.6.0"
+      },
+      "hash": "63e7a981917249fbf5f9e6df047dc857d742ffda"
+    },
+    "com.laicasaane.unity-supplements": {
+      "version": "2.6.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://package.openupm.com"
+    },
     "com.pixelwizards.navmeshcomponents": {
       "version": "0.1.0",
       "depth": 0,

@@ -6,6 +6,10 @@ namespace Runtime.Enemy
     public class EnemyStats : ScriptableObject
     {
         public float speed;
-        
+        public float attackSpeed;
+        public float attack;
+        public float attackRange;
+        public float health;
+        public float maxHealth;
     }
 }

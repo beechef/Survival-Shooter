@@ -29,6 +29,10 @@ MonoBehaviour:
     m_Address: Assets/Prefabs/Enemy/Hellephant.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: ef39ae7291c751249b296f00bf6fb042
+    m_Address: Assets/Prefabs/HitParticles.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 6b2b905ed1ff5374ebe225d8b39c37e1, type: 2}
   m_SchemaSet:

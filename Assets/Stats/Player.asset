@@ -15,5 +15,8 @@ MonoBehaviour:
   moveSpeed: 3
   sprintSpeed: 4
   jumpHeight: 1
-  fireSpeed: 0.75
+  attack: 1
+  fireSpeed: 0.1
   fireRange: 125
+  health: 0
+  maxHealth: 15

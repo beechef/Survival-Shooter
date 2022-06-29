@@ -22,6 +22,8 @@ namespace Runtime.Player
         private float _yVelocity;
         private bool _isUpdatePosition;
 
+        public bool isDeath = false;
+
         private void Start()
         {
             _playerInput = playerComponents.playerInput;
@@ -35,6 +37,7 @@ namespace Runtime.Player
 
         private void Update()
         {
+            if (isDeath) return;
             Reset();
             Move();
             Jump();
@@ -81,8 +84,10 @@ namespace Runtime.Player
             {
                 _isUpdatePosition = true;
             }
+
             return isGround;
         }
+
         private void Jump()
         {
             if (!_playerInput.IsJump() || !characterController.isGrounded) return;

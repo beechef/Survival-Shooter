@@ -29,6 +29,7 @@ MonoBehaviour:
     m_Name: package.openupm.com
     m_Url: https://package.openupm.com
     m_Scopes:
+    - com.laicasaane.unity-supplements
     - com.openupm
     - com.pixelwizards.navmeshcomponents
     m_IsDefault: 0
