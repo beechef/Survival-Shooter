@@ -8,11 +8,12 @@ using Random = UnityEngine.Random;
 
 namespace Runtime
 {
-    public class Spawner : MonoBehaviour
+    public class EnemyManager : MonoBehaviour
     {
-        private static Spawner _instance;
-        public static Spawner Instance => _instance;
+        private static EnemyManager _instance;
+        public static EnemyManager Instance => _instance;
         [SerializeField] private AddressableGameObjectSpawner spawner;
+        [SerializeField] private ScoreRenderer scoreRenderer;
         [SerializeField] private float minDelayTime;
         [SerializeField] private float maxDelayTime;
         public List<Vector3> positions;
@@ -20,6 +21,8 @@ namespace Runtime
         private float _lastSpawn;
         private float _delayTime;
         private bool _isDone = false;
+
+        public int killedEnemyCount;
 
         private void Awake()
         {
@@ -31,6 +34,8 @@ namespace Runtime
             {
                 _instance = this;
             }
+
+            killedEnemyCount = 0;
         }
 
         private async void Start()
@@ -60,6 +65,8 @@ namespace Runtime
         public void Return(GameObject go)
         {
             spawner.Return(go);
+            killedEnemyCount++;
+            scoreRenderer.Render(killedEnemyCount);
         }
     }
 }

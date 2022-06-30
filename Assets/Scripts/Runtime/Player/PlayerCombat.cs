@@ -85,6 +85,7 @@ namespace Runtime.Player
                 PlayAudio(deathAudio);
                 _isDeath = true;
                 _playerController.isDeath = true;
+                StateManager.Instance.GameOver();
             }
             else
             {
@@ -98,7 +99,7 @@ namespace Runtime.Player
             fireEffect.Play();
             var effect = await EffectPool.Instance.GetEffect("HitParticles");
             effect.transform.position = _point;
-            await UniTask.Delay(TimeSpan.FromSeconds(.02f));
+            await UniTask.Delay(TimeSpan.FromSeconds(.01f));
             lineRenderer.enabled = false;
             await UniTask.Delay(TimeSpan.FromSeconds(.2f));
             EffectPool.Instance.Return(effect);

@@ -7,6 +7,7 @@ namespace Runtime.Player
         [SerializeField] private PlayerComponents playerComponents;
         [SerializeField] private CharacterController characterController;
         [SerializeField] private PlayerPosition playerPosition;
+        [SerializeField] private PauseMenu pauseMenu;
 
         public float gravity;
 
@@ -37,6 +38,7 @@ namespace Runtime.Player
 
         private void Update()
         {
+            if (pauseMenu.isPause) return;
             if (isDeath) return;
             Reset();
             Move();

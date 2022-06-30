@@ -71,6 +71,15 @@ public partial class @Input : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""3683bc68-769e-4f2a-a847-2f5ded80ecaa"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -172,6 +181,17 @@ public partial class @Input : IInputActionCollection2, IDisposable
                     ""action"": ""Mouse Look"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e267bd02-956d-47db-93c8-57cb5d2a43a2"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -185,6 +205,7 @@ public partial class @Input : IInputActionCollection2, IDisposable
         m_Default_MouseLook = m_Default.FindAction("Mouse Look", throwIfNotFound: true);
         m_Default_Jump = m_Default.FindAction("Jump", throwIfNotFound: true);
         m_Default_Fire = m_Default.FindAction("Fire", throwIfNotFound: true);
+        m_Default_Pause = m_Default.FindAction("Pause", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -249,6 +270,7 @@ public partial class @Input : IInputActionCollection2, IDisposable
     private readonly InputAction m_Default_MouseLook;
     private readonly InputAction m_Default_Jump;
     private readonly InputAction m_Default_Fire;
+    private readonly InputAction m_Default_Pause;
     public struct DefaultActions
     {
         private @Input m_Wrapper;
@@ -258,6 +280,7 @@ public partial class @Input : IInputActionCollection2, IDisposable
         public InputAction @MouseLook => m_Wrapper.m_Default_MouseLook;
         public InputAction @Jump => m_Wrapper.m_Default_Jump;
         public InputAction @Fire => m_Wrapper.m_Default_Fire;
+        public InputAction @Pause => m_Wrapper.m_Default_Pause;
         public InputActionMap Get() { return m_Wrapper.m_Default; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -282,6 +305,9 @@ public partial class @Input : IInputActionCollection2, IDisposable
                 @Fire.started -= m_Wrapper.m_DefaultActionsCallbackInterface.OnFire;
                 @Fire.performed -= m_Wrapper.m_DefaultActionsCallbackInterface.OnFire;
                 @Fire.canceled -= m_Wrapper.m_DefaultActionsCallbackInterface.OnFire;
+                @Pause.started -= m_Wrapper.m_DefaultActionsCallbackInterface.OnPause;
+                @Pause.performed -= m_Wrapper.m_DefaultActionsCallbackInterface.OnPause;
+                @Pause.canceled -= m_Wrapper.m_DefaultActionsCallbackInterface.OnPause;
             }
             m_Wrapper.m_DefaultActionsCallbackInterface = instance;
             if (instance != null)
@@ -301,6 +327,9 @@ public partial class @Input : IInputActionCollection2, IDisposable
                 @Fire.started += instance.OnFire;
                 @Fire.performed += instance.OnFire;
                 @Fire.canceled += instance.OnFire;
+                @Pause.started += instance.OnPause;
+                @Pause.performed += instance.OnPause;
+                @Pause.canceled += instance.OnPause;
             }
         }
     }
@@ -312,5 +341,6 @@ public partial class @Input : IInputActionCollection2, IDisposable
         void OnMouseLook(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnFire(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
     }
 }

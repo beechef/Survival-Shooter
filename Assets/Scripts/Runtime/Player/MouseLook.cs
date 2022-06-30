@@ -16,7 +16,6 @@ namespace Runtime.Player
 
         private void Start()
         {
-            Cursor.lockState = CursorLockMode.Locked;
             _xRotation = player.localRotation.x;
             _yRotation = player.localRotation.y;
 

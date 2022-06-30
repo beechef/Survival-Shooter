@@ -5,13 +5,13 @@ using UnityEngine;
 
 namespace Editor
 {
-    [CustomEditor(typeof(Spawner))]
+    [CustomEditor(typeof(EnemyManager))]
     public class SpawnerEditor : UnityEditor.Editor
     {
         private void OnSceneGUI()
         {
-            Spawner spawner = target as Spawner;
-            List<Vector3> positions = spawner.positions ?? new List<Vector3>();
+            EnemyManager enemyManager = target as EnemyManager;
+            List<Vector3> positions = enemyManager.positions ?? new List<Vector3>();
 
             for (int i = 0; i < positions.Count; i++)
             {

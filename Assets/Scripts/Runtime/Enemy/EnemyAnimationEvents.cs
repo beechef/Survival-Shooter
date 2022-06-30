@@ -7,7 +7,7 @@ namespace Runtime.Enemy
         [SerializeField] private GameObject parent;
         public void Death()
         {
-            Spawner.Instance.Return(parent);
+            EnemyManager.Instance.Return(parent);
         }
     }
 }
