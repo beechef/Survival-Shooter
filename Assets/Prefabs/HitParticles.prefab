@@ -4889,4 +4889,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 286cb1f244a947038f83bd2a64eb0acd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particleSystem: {fileID: 19800000}
+  particle: {fileID: 19800000}

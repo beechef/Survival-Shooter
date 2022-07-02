@@ -13,5 +13,8 @@ namespace Runtime.Player
         public float fireRange;
         public float health;
         public float maxHealth;
+        [Range(0, 100)] public float precision;
+        [Range(0, 10)] public float maxShake;
+        [Range(0, 10)] public float shakeStep;
     }
 }

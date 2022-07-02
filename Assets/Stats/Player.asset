@@ -20,3 +20,6 @@ MonoBehaviour:
   fireRange: 125
   health: 0
   maxHealth: 15
+  precision: 80
+  maxShake: 1
+  shakeStep: 0.1

@@ -30,6 +30,7 @@ namespace Runtime
 
         public void SetPosition(Vector3 position)
         {
+            if (position == Position) return;
             Position = position;
             _changeActions?.Invoke(Position);
         }

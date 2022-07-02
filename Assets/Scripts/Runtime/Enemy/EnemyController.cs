@@ -7,7 +7,7 @@ namespace Runtime.Enemy
     {
         [SerializeField] private EnemyComponents enemyComponents;
         [SerializeField] private MoveSet moveSet;
-        [SerializeField] private new Collider collider;
+        [SerializeField] private Collider enemyCollider;
         public NavMeshAgent agent;
         private EnemyStats _stats;
         private EnemyStatsSystem _enemyStatsSystem;
@@ -31,7 +31,7 @@ namespace Runtime.Enemy
         {
             _enemyStatsSystem = enemyComponents.enemyStatsSystem;
             enemyComponents.enemyCombat.isDeath = false;
-            collider.enabled = true;
+            enemyCollider.enabled = true;
 
             _enemyStatsSystem.InitialStats();
             _stats = _enemyStatsSystem.Stats;

@@ -1,13 +1,17 @@
 ﻿using System;
-using System.Collections;
 using Cysharp.Threading.Tasks;
 using Runtime.Enemy;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Runtime.Player
 {
     public class PlayerCombat : MonoBehaviour
     {
+        private const int DirLeft = 0;
+        private const int DirRight = 1;
+        private const int DirDown = 2;
+        private const int DirUp = 3;
         [SerializeField] private PlayerComponents playerComponents;
         [SerializeField] private LineRenderer lineRenderer;
         [SerializeField] private AudioSource audioSource;
@@ -26,6 +30,8 @@ namespace Runtime.Player
         private RaycastHit _raycastHit;
         private Vector3 _point;
 
+        public float shakeValue;
+
 
         private WaitForSeconds _lineFadedTime;
 
@@ -41,6 +47,7 @@ namespace Runtime.Player
             _stats = _playerStatsSystem.Stats;
 
             _lineFadedTime = new WaitForSeconds(0.1f);
+            shakeValue = 0f;
         }
 
         private void PlayAudio(AudioClip clip)
@@ -50,13 +57,22 @@ namespace Runtime.Player
             audioSource.Play();
         }
 
+        private void Update()
+        {
+            if (shakeValue > 0f)
+            {
+                shakeValue = Mathf.Clamp(shakeValue - (_stats.shakeStep * Time.deltaTime * 4), 0f, _stats.maxShake);
+            }
+        }
+
         public void Fire()
         {
             if (Time.time - _lastFire <= _stats.fireSpeed) return;
             PlayAudio(fireAudio);
             lineRenderer.SetPosition(0, attackPoint.position);
+            Vector3 dir = CalcShake();
 
-            if (Physics.Raycast(_camera.transform.position, _camera.transform.forward, out _raycastHit,
+            if (Physics.Raycast(_camera.transform.position, dir, out _raycastHit,
                 _stats.fireRange, enemyMask))
             {
                 _point = _raycastHit.point;
@@ -103,6 +119,41 @@ namespace Runtime.Player
             lineRenderer.enabled = false;
             await UniTask.Delay(TimeSpan.FromSeconds(.2f));
             EffectPool.Instance.Return(effect);
+        }
+
+        private Vector3 CalcShake()
+        {
+            shakeValue = Mathf.Clamp(shakeValue + _stats.shakeStep, 0f, _stats.maxShake);
+            Vector3 dir = _camera.transform.forward;
+            if (Random.Range(0, 100) > _stats.precision)
+            {
+                int dirShake = Random.Range(0, 4);
+                switch (dirShake)
+                {
+                    case DirLeft:
+                    {
+                        dir -= _camera.transform.right * (shakeValue * 0.1f);
+                        break;
+                    }
+                    case DirRight:
+                    {
+                        dir += _camera.transform.right * (shakeValue * 0.1f);
+                        break;
+                    }
+                    case DirDown:
+                    {
+                        dir -= _camera.transform.up * (shakeValue * 0.1f);
+                        break;
+                    }
+                    case DirUp:
+                    {
+                        dir += _camera.transform.up * (shakeValue * 0.1f);
+                        break;
+                    }
+                }
+            }
+
+            return dir;
         }
     }
 }

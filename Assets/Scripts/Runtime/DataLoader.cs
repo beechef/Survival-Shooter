@@ -7,7 +7,7 @@ namespace Runtime
     public class DataLoader : MonoBehaviour
     {
         private static readonly string SaveLocation = "PlayerData";
-        public static SaveData saveData = new SaveData();
+        public static SaveData saveData;
 
         private void Awake()
         {

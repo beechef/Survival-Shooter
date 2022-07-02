@@ -4,16 +4,16 @@ namespace Runtime
 {
     public class ParticlesEffect : MonoBehaviour
     {
-        [SerializeField] private new ParticleSystem particleSystem;
+        [SerializeField] private ParticleSystem particle;
 
         private void OnEnable()
         {
-            particleSystem.Play();
+            particle.Play();
         }
 
         private void OnDisable()
         {
-            particleSystem.Stop();
+            particle.Stop();
         }
     }
 }

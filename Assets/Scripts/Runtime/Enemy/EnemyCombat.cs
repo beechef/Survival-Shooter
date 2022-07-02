@@ -6,7 +6,7 @@ namespace Runtime.Enemy
     public class EnemyCombat : MonoBehaviour
     {
         [SerializeField] private EnemyComponents enemyComponents;
-        [SerializeField] private new Collider collider;
+        [SerializeField] private  Collider enemyCollider;
         [SerializeField] private AudioSource audioSource;
         [SerializeField] private AudioClip hitAudio;
         [SerializeField] private AudioClip deathAudio;
@@ -64,7 +64,7 @@ namespace Runtime.Enemy
                 _enemyAnimation.Death();
                 PlayAudio(deathAudio);
                 isDeath = true;
-                collider.enabled = false;
+                enemyCollider.enabled = false;
             }
             else
             {

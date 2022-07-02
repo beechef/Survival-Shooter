@@ -384,7 +384,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyComponents: {fileID: 9202080107595199318}
   moveSet: {fileID: 11400000, guid: eb3d7a2165110cc488b39f4edb16a838, type: 2}
-  collider: {fileID: 9202080107595199317}
+  enemyCollider: {fileID: 9202080107595199317}
   agent: {fileID: 9202080107595199305}
 --- !u!114 &9202080107595199316
 MonoBehaviour:
@@ -427,7 +427,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyComponents: {fileID: 9202080107595199318}
-  collider: {fileID: 9202080107595199317}
+  enemyCollider: {fileID: 9202080107595199317}
   audioSource: {fileID: 3509759645923365242}
   hitAudio: {fileID: 8300000, guid: 02e6208ec76314158a9f548f51fe9f11, type: 3}
   deathAudio: {fileID: 8300000, guid: 1d3bfb9269f136947bf8ac164cace1ff, type: 3}
